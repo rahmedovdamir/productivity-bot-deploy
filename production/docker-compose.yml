@@ -35,12 +35,13 @@ services:
       context: ./productivity-bot
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "8081:8081"
     environment:
       - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
       - REDIS_URL=redis://redis:6379
+      - PORT=8081
     volumes:
-      - ./productivity-bot/config:ro 
+      - ./configs/production/backend-config.json:/app/config.json:ro
     depends_on:
       db:
         condition: service_healthy
@@ -54,7 +55,7 @@ services:
       context: ./productivity-bot-app
       dockerfile: Dockerfile
     volumes:
-      - ./productivity-bot-app/config:ro 
+      - ./configs/production/frontend-config.json:/app/config.json:ro
     networks:
       - app-network
     restart: unless-stopped
