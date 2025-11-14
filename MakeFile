@@ -1,0 +1,28 @@
+.PHONY: up down build update logs
+
+update:
+	git submodule update --init --recursive
+
+build: update
+	docker-compose build
+
+up: update
+	docker-compose up -d
+
+down:
+	docker-compose down
+
+restart: down up
+
+logs:
+	docker-compose logs -f
+
+ps:
+	docker-compose ps
+
+dev: update
+	docker-compose up --build
+
+# Остановка с удалением volumes
+clean:
+	docker-compose down -v
