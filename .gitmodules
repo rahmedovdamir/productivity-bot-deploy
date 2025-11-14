@@ -1,6 +1,6 @@
 [submodule "productivity-bot"]
 	path = productivity-bot
-	url = https://github.com/andrewgein/productivity-bot
+	url = https://github.com/andrewgein/productivity-bot.git
 [submodule "productivity-bot-app"]
 	path = productivity-bot-app
-	url = https://github.com/andrewgein/productivity-bot-app
+	url = https://github.com/andrewgein/productivity-bot-app.git
