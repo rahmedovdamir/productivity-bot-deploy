@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .PHONY: help local-up local-down prod-up prod-down build logs clean update restart restart-prod build-backend build-backend-local build-backend-prod
 
 help:
@@ -18,6 +19,7 @@ help:
 	@echo "  clean               - Stop all and clean up"
 	@echo "  restart             - Restart local environment"
 	@echo "  restart-prod        - Restart production environment"
+
 
 update:
 	git submodule update --init --recursive
