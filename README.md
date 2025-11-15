@@ -21,6 +21,11 @@
 ```bash
 git clone https://github.com/rahmedovdamir/productivity-bot-deploy.git
 ```
+в первую очередь нужно прописать submodule update --init для инициализации сабмодулей (фронт и бек):
+productivity-bot-deploy/
+```bash
+git submodule update —init —recursive
+```
 установленный проект будет иметь структуру:
 ```
 .
@@ -120,11 +125,7 @@ git clone https://github.com/rahmedovdamir/productivity-bot-deploy.git
 │   └── tailwind.config.js
 └── README.md
 ```
-в первую очередь нужно прописать submodule update --init для инициализации сабмодулей (фронт и бек):
-productivity-bot-deploy/
-```bash
-git submodule update —init —recursive
-```
+
 Далее в зависимости от того, что вы планируете вы заполянете следующие файлы:
 
 1)Если локальный деплой заполняете следующие файлы:
