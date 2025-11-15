@@ -1,5 +1,5 @@
 # **Max Bot**
-
+# **link: https://github.com/rahmedovdamir/productivity-bot-deploy**
 ## Технологический стек
 - **Язык**: Go 1.21+
 - **Веб-фреймворк**: Chi
