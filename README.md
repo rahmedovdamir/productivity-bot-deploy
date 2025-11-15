@@ -128,14 +128,16 @@ git submodule update —init —recursive
 Далее в зависимости от того, что вы планируете вы заполянете следующие файлы:
 
 1)Если локальный деплой заполняете следующие файлы:
-```
+
 productivity-bot-deploy/productivity-bot-app/src/config.json
+```
 {
   "API_BASE_URL": "/api"
 }
 ```
-```
+
 productivity-bot-deploy/productivity-bot/config.json
+```
 {
   "Env": "local",
   "ApiToken": "f9LHodD0cOJPY8au305gPLTY_bSuHACvqV4h3y7AjfW3dSJWPbeRwLSvilyuMFXuPVXWUDUjvVewy7Z-cE-u",
@@ -158,8 +160,9 @@ productivity-bot-deploy/productivity-bot/config.json
 ```bash
 mkdir configs
 ```
-```
+
 productivity-bot-deploy/local/configs/backend-config.json
+```
 {
   "Env": "local",
   "ApiToken": "f9LHodD0cOJPY8au305gPLTY_bSuHACvqV4h3y7AjfW3dSJWPbeRwLSvilyuMFXuPVXWUDUjvVewy7Z-cE-u",
@@ -176,8 +179,9 @@ productivity-bot-deploy/local/configs/backend-config.json
   }
 }
 ```
-```
+
 productivity-bot-deploy/local/configs/frontend-config.json
+```
 {
   "API_BASE_URL": "/api"
 }
@@ -190,8 +194,9 @@ make local-up
 проект соберется и запустится
 
 2)Если серверный деплой заполняете следующие файлы:
-```
+
 /productivity-bot-deploy/productivity-bot/config.json
+```
 {
   "Env" : "prod",
   "ApiToken":"f9LHodD0cOJPY8au305gPLTY_bSuHACvqV4h3y7AjfW3dSJWPbeRwLSvilyuMFXuPVXWUDUjvVewy7Z-cE-u",
@@ -208,8 +213,9 @@ make local-up
   }
 }
 ```
-```
+
 /productivity-bot-deploy/productivity-bot-app/src/config.json
+```
 {
     "API_BASE_URL": "https://81.177.140.170/api"
 }
@@ -220,8 +226,9 @@ make local-up
 ```bash
 mkdir configs
 ```
+
+/productivity-bot-deploy/production/configs/backend-config.json 
 ```
-~/productivity-bot-deploy/production/configs/backend-config.json 
 {
   "Env" : "prod",
   "ApiToken":"f9LHodD0cOJPY8au305gPLTY_bSuHACvqV4h3y7AjfW3dSJWPbeRwLSvilyuMFXuPVXWUDUjvVewy7Z-cE-u",
@@ -238,8 +245,9 @@ mkdir configs
   }
 }
 ```
+
+/productivity-bot-deploy/production/configs/frontend-config.json 
 ```
-~/productivity-bot-deploy/production/configs/frontend-config.json 
 {
     "API_BASE_URL": "https://81.177.140.170/api"
 }
