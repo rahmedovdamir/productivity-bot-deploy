@@ -1,1 +1,2 @@
-*.json
+*.jsonproduction/.env
+production/ssl/
