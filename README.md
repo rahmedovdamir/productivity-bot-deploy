@@ -218,7 +218,7 @@ make local-up
 /productivity-bot-deploy/productivity-bot-app/src/config.json
 ```
 {
-    "API_BASE_URL": "https://ipserver/api"
+    "API_BASE_URL": "https://serverip/api"
 }
 ```
 
@@ -250,7 +250,7 @@ mkdir configs
 /productivity-bot-deploy/production/configs/frontend-config.json 
 ```
 {
-    "API_BASE_URL": "https://ipserver/api"
+    "API_BASE_URL": "https://serverip/api"
 }
 ```
 
