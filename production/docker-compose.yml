@@ -32,10 +32,12 @@ services:
 
   backend:
     build:
-      context: ./productivity-bot
+      context: ../productivity-bot
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
+    env_file:
+      - .env
     environment:
       - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
       - REDIS_URL=redis://redis:6379
@@ -52,7 +54,7 @@ services:
 
   frontend:
     build:
-      context: ./productivity-bot-app
+      context: ../productivity-bot-app
       dockerfile: Dockerfile
     volumes:
       - ./configs/production/frontend-config.json:/app/config.json:ro
@@ -71,8 +73,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
+      - /root/productivity-bot-deploy/production/ssl:/etc/nginx/ssl 
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./ssl:/etc/nginx/ssl:ro  
     depends_on:
       - backend
       - frontend
@@ -86,3 +88,4 @@ volumes:
 networks:
   app-network:
     driver: bridge
+
