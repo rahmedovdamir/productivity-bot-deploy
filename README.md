@@ -141,7 +141,7 @@ productivity-bot-deploy/productivity-bot/config.json
 ```
 {
   "Env": "local",
-  "ApiToken": "f9LHodD0cOJPY8au305gPLTY_bSuHACvqV4h3y7AjfW3dSJWPbeRwLSvilyuMFXuPVXWUDUjvVewy7Z-cE-u",
+  "ApiToken": "token",
   "PostgresHost": "db",    
   "PostgresDB": "bot",
   "PostgresUser": "postgres",
@@ -166,7 +166,7 @@ productivity-bot-deploy/local/configs/backend-config.json
 ```
 {
   "Env": "local",
-  "ApiToken": "f9LHodD0cOJPY8au305gPLTY_bSuHACvqV4h3y7AjfW3dSJWPbeRwLSvilyuMFXuPVXWUDUjvVewy7Z-cE-u",
+  "ApiToken": "token",
   "PostgresHost": "db",    
   "PostgresDB": "bot",
   "PostgresUser": "postgres",
@@ -200,7 +200,7 @@ make local-up
 ```
 {
   "Env" : "prod",
-  "ApiToken":"f9LHodD0cOJPY8au305gPLTY_bSuHACvqV4h3y7AjfW3dSJWPbeRwLSvilyuMFXuPVXWUDUjvVewy7Z-cE-u",
+  "ApiToken":"token",
   "PostgresHost": "db",
   "PostgresDB": "bot",
   "PostgresUser": "postgres",
@@ -218,7 +218,7 @@ make local-up
 /productivity-bot-deploy/productivity-bot-app/src/config.json
 ```
 {
-    "API_BASE_URL": "https://81.177.140.170/api"
+    "API_BASE_URL": "https://ipserver/api"
 }
 ```
 
@@ -232,7 +232,7 @@ mkdir configs
 ```
 {
   "Env" : "prod",
-  "ApiToken":"f9LHodD0cOJPY8au305gPLTY_bSuHACvqV4h3y7AjfW3dSJWPbeRwLSvilyuMFXuPVXWUDUjvVewy7Z-cE-u",
+  "ApiToken":"token",
   "PostgresHost": "db",
   "PostgresDB": "bot",
   "PostgresUser": "postgres",
@@ -250,7 +250,7 @@ mkdir configs
 /productivity-bot-deploy/production/configs/frontend-config.json 
 ```
 {
-    "API_BASE_URL": "https://81.177.140.170/api"
+    "API_BASE_URL": "https://ipserver/api"
 }
 ```
 
