@@ -258,11 +258,13 @@ mkdir configs
 ```bash
 mkdir ssl
 ```
-и импортируйте туда свои ssl ключи:                   
+и импортируйте туда свои ssl ключи:    
+```
   domain.crt
   domain.csr  
   domain.key
   password
+```
 
 далее в корневой папке 
 ~/productivity-bot-deploy
