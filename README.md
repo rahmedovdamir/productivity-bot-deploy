@@ -1,27 +1,28 @@
-**Max Bot**
+# **Max Bot**
 
-Технологический стек
--Язык: Go 1.21+
--Веб-фреймворк: Chi
--База данных: PostgreSQL 15
--ORM: GORM
--Кэш/Брокер сообщений: Redis 7
--Планировщик задач: robfig/cron
--Внедрение зависимостей: Uber Dig
--Контейнеризация: Docker \& Docker Compose
+## Технологический стек
+- **Язык**: Go 1.21+
+- **Веб-фреймворк**: Chi
+- **База данных**: PostgreSQL 15
+- **ORM**: GORM
+- **Кэш/Брокер сообщений**: Redis 7
+- **Планировщик задач**: robfig/cron
+- **Внедрение зависимостей**: Uber Dig
+- **Контейнеризация**: Docker & Docker Compose
 
-*Предварительные требования*
--Убедитесь, что у вас установлены следующие инструменты:
--Go версии 1.21 или выше.
--Docker и Docker Compose.
--(Опционально, для локального запуска) Установленные и запущенные PostgreSQL и Redis.
+## *Предварительные требования*
+Убедитесь, что у вас установлены следующие инструменты:
+- Go версии 1.21 или выше
+- Docker и Docker Compose
+- (Опционально, для локального запуска) Установленные и запущенные PostgreSQL и Redis
 
-установка:
+## Установка:
 
+```bash
 git clone https://github.com/rahmedovdamir/productivity-bot-deploy.git
-
+```
 установленный проект будет иметь структуру:
-
+```
 .
 ├── local
 │   ├── docker-compose.yml
@@ -118,20 +119,22 @@ git clone https://github.com/rahmedovdamir/productivity-bot-deploy.git
 │   │   └── StorageManager.js
 │   └── tailwind.config.js
 └── README.md
-
+```
 в первую очередь нужно прописать submodule update --init для инициализации сабмодулей (фронт и бек):
+productivity-bot-deploy/
+```bash
 git submodule update —init —recursive
-
+```
 Далее в зависимости от того, что вы планируете вы заполянете следующие файлы:
 
 1)Если локальный деплой заполняете следующие файлы:
-
+```
 productivity-bot-deploy/productivity-bot-app/src/config.json
 {
   "API_BASE_URL": "/api"
 }
-
-
+```
+```
 productivity-bot-deploy/productivity-bot/config.json
 {
   "Env": "local",
@@ -148,11 +151,14 @@ productivity-bot-deploy/productivity-bot/config.json
     "IdleTimeout": "60s"
   }
 }
+```
 
 в папке productivity-bot-deploy/local
 создаем папку configs
+```bash
 mkdir configs
-
+```
+```
 productivity-bot-deploy/local/configs/backend-config.json
 {
   "Env": "local",
@@ -169,20 +175,22 @@ productivity-bot-deploy/local/configs/backend-config.json
     "IdleTimeout": "60s"
   }
 }
-
-
+```
+```
 productivity-bot-deploy/local/configs/frontend-config.json
 {
   "API_BASE_URL": "/api"
 }
-
+```
 далее прописываете команду в корневой папке
 productivity-bot-deploy/
+```bash
 make local-up
+```
 проект соберется и запустится
 
-2)Если серверный деплой:
-
+2)Если серверный деплой заполняете следующие файлы:
+```
 /productivity-bot-deploy/productivity-bot/config.json
 {
   "Env" : "prod",
@@ -199,16 +207,20 @@ make local-up
     "IdleTimeout": "60s"
   }
 }
-
+```
+```
 /productivity-bot-deploy/productivity-bot-app/src/config.json
 {
     "API_BASE_URL": "https://81.177.140.170/api"
 }
+```
 
 в папке ~/productivity-bot-deploy/production
 создаем папку configs
+```bash
 mkdir configs
-
+```
+```
 ~/productivity-bot-deploy/production/configs/backend-config.json 
 {
   "Env" : "prod",
@@ -225,15 +237,19 @@ mkdir configs
     "IdleTimeout": "60s"
   }
 }
-
+```
+```
 ~/productivity-bot-deploy/production/configs/frontend-config.json 
 {
     "API_BASE_URL": "https://81.177.140.170/api"
 }
+```
 
 далее в папке ~/productivity-bot-deploy/production
 создаем  папку ssl
+```bash
 mkdir ssl
+```
 и импортируйте туда свои ssl ключи:                   
   domain.crt
   domain.csr  
@@ -243,12 +259,15 @@ mkdir ssl
 далее в корневой папке 
 ~/productivity-bot-deploy
 прописываете 
+```bash
 make prod-up
+```
 проект соберется и запустится
 
 Затестировать можете в приложении MAX!
 
 после создания файлов у вас должна получиться следующая структура:
+```
 .
 ├── local
 │   ├── configs
@@ -358,7 +377,7 @@ make prod-up
 │   │   └── StorageManager.js
 │   └── tailwind.config.js
 └── README.md
-
+```
 
 
 
