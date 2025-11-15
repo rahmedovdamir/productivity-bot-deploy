@@ -43,7 +43,7 @@ services:
       - REDIS_URL=redis://redis:6379
       - PORT=8081
     volumes:
-      - ./configs/production/backend-config.json:/app/config.json:ro
+      - ./configs/backend-config.json:/app/config.json:ro
     depends_on:
       db:
         condition: service_healthy
@@ -57,7 +57,7 @@ services:
       context: ../productivity-bot-app
       dockerfile: Dockerfile
     volumes:
-      - ./configs/production/frontend-config.json:/app/config.json:ro
+      - ./configs/frontend-config.json:/app/config.json:ro
     networks:
       - app-network
     restart: unless-stopped
